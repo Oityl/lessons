@@ -1,0 +1,32 @@
+<!-- поэтапный процесс загрузки страниц сайтов в браузере -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Document</title>
+    <!-- не получается взаимодействовать с элементами до загрузки страницы -->
+    <!-- но DOMContentLoaded ждет загрузки HTML перед выполнением скрипта -->
+    <!-- <script src="js/scripts/scripts.js"></script> -->
+
+    <!-- лучше не использовать скрипты в head -->
+
+    <!-- defer сообщает браузеру, что он должен продолжать обрабатывать страницу и загружать скрипт в фоновом режиме, а затем запустить этот скрипт -->
+    <!-- загружаются последовательно -->
+    <!-- <script defer src="js/scripts/scripts.js"></script> --> <!-- не блокирует страницу, ждёт готовности верстки -->
+    <!-- <script defer src="js/scripts/test.js"></script> -->
+</head>
+<body>
+    <!-- <script src="js/scripts/scripts.js"></script> -->
+
+    <!-- загружаются независимо (первое загрузится – запустится в первую очередь) -->
+    <script async src="js/scripts/script.js"></script> <!-- async загружает скрипт и сразу же запустить по готовности -->
+    <script async src="js/scripts/test.js"></script>
+    <p>Hello world!</p>
+    <p>Second message</p>
+
+    <!-- при загрузке скрипт блокирует страницу -->
+	<!-- <script src="js/scripts/scripts.js"></script> -->
+</body>
+</html>
